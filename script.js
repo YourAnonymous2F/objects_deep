@@ -120,9 +120,14 @@ const accountC = { ...accountA };
 accountA.deposit(100);
 accountB.withdraw(200);
 accountC.deposit(50);
+// accountC.withdraw(50);
+console.log(accountC)
+
 
 // Part A and Part B
-// accountA balance = 400, accountB balance = 400, accountC balance = 400
+// accountA balance = 400, accountB balance = 400, accountC balance = 550
 
 // The balance of accountA is 400, the balance of accountB is 400 and the balance of accountC is 550. The balance of accountA and accountB are the same because accountA and accountB are both dependent on each other. Any changes made to accountB will affect accountA and vice versa; this is because we directly assigned the object property of accountA to accountB. The value of accountC is different because the spread operator was used, which means that it is creating another object but still making use of the object property of accountA but they are independent of each other. This simply implies that a change in accountC object property won't affect accountA except there is a limitation of the spread operator like a nested property in the object.
 
+// Part C
+// The accountC has the working deposit and withdraw methods from the spread operator it was created from through accountA. The spread operator copies everything from accountA and the only time it will miss copying something is if we have a nested property in an inital property.
